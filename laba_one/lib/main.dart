@@ -103,24 +103,19 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 32.0),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Распределяем кнопки
-                children: [
-                  // **Кнопка** с **onPressed** (обработчик нажатия)
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blueAccent,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                    ),
-                    onPressed: () {
-                      print('Нажата кнопка');
-                    },
-                    child: const Text('Кнопка', style: TextStyle(fontSize: 16)),
+              Center(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                   ),
-                ],
-              ),
+                  onPressed: () {
+                    print('Нажата кнопка');
+                  },
+                  child: const Text('Кнопка', style: TextStyle(fontSize: 16)),
+                ),
+              )
             ],
           ),
         ),
