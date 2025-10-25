@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:someflutterproject/subjects.dart';
 import 'signup.dart';
 import 'signin.dart';
 import 'subjects.dart';
@@ -68,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 textStyle: const TextStyle(fontSize: 16),
               ),
-              child: const Text("Авторизоваться"),
+              child: const SelectableText("Авторизоваться"),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -86,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 textStyle: const TextStyle(fontSize: 16),
               ),
-              child: const Text("Учителя"),
+              child: const SelectableText("Учителя"),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -95,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 textStyle: const TextStyle(fontSize: 16),
               ),
-              child: Text("Предметы"),
+              child: SelectableText("Предметы"),
             ),
           ],
         ),

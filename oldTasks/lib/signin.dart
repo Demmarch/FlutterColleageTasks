@@ -8,7 +8,7 @@ class AuthorizationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Авторизация"),
+        title: const SelectableText("Авторизация"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -16,7 +16,7 @@ class AuthorizationPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            SelectableText(
               'Добро пожаловать!',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
