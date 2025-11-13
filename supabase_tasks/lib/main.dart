@@ -5,6 +5,8 @@ const String supabaseUrl = 'https://diatfsydzbqpfdzwcgil.supabase.co';
 const String supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpYXRmc3lkemJxcGZkendjZ2lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEyMTIxNzIsImV4cCI6MjA3Njc4ODE3Mn0.o5w70G_DuDtwR2MEaylJC68g-UTN5dzOJmVVmzVog8w';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await Supabase.initialize(
     url: supabaseUrl,
     anonKey: supabaseAnonKey,
@@ -18,15 +20,21 @@ Future<void> main() async {
 
 final supabase = Supabase.instance.client;
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends StatelessWidget {
   const MyApp({super.key});
 
   Future<List<dynamic>> _fetchData() async {
     print("Запрос данных из Supabase");
 
     try {
-      final data = await supabase.from('messages').select();
-
+      final data = await supabase.from('messages').select();      
       print("Данные получены: $data");
       return data;
     } catch (error) {
@@ -43,6 +51,7 @@ class MyApp extends StatelessWidget {
       child: FutureBuilder<List<dynamic>>(
           future: _fetchData(),
           builder: (context, snapshot) {
+            
             // Состояние загрузки
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
@@ -99,7 +108,7 @@ class MyApp extends StatelessWidget {
                       final itemString = messages[index].toString();
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 4.0),
-                        child: Text(itemString),
+                        child: SelectableText(itemString),
                       );
                     },
                   ),
