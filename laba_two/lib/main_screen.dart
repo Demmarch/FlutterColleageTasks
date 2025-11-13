@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -6,13 +7,12 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Главный экран (Named)')),
+      appBar: AppBar(title: const Text('Главный экран (GoRouter)')),
       body: Center(
         child: ElevatedButton(
-          child: const Text('На Экран 2 (pushNamed)'),
+          child: const Text('На Экран 2 (GoRouter)'),
           onPressed: () {
-            // "Звоним" по имени:
-            Navigator.pushNamed(context, '/second');
+            context.push('/second');
           },
         ),
       ),

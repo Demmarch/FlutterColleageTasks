@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ThirdScreen extends StatelessWidget {
   const ThirdScreen({super.key});
@@ -6,12 +7,12 @@ class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Третий экран (3)')),
+      appBar: AppBar(title: const Text('Третий экран (GoRouter)')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Назад'),
           onPressed: () {
-            Navigator.pop(context); // Просто закрываем (снимаем) этот экран
+            context.pop();
           },
         ),
       ),
